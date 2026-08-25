@@ -1,14 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IMG DEV. — Simple apps that solve everyday problems</title>
+    <meta name="description" content="IMG DEV. builds focused software — simple apps that solve everyday problems.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="IMG DEV.">
+    <meta property="og:description" content="Simple apps that solve everyday problems.">
+    <meta property="og:url" content="https://img-dev.io/">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="canonical" href="https://img-dev.io/">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b0e12'/><text x='50' y='69' font-size='52' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%234ade80'>&gt;_</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Applies the saved theme before first paint so light mode doesn't flash dark. -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem("imgdev-theme");
+                if (saved === "light" || saved === "dark") {
+                    document.documentElement.setAttribute("data-theme", saved);
+                }
+            } catch (e) { /* storage blocked — keep the default dark theme */ }
+        })();
+    </script>
 </head>
 
 <body>
-    <p>img-dev</p>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__sigil">&gt;_</span> IMG&nbsp;DEV.
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="#apps">Apps</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ============================ Hero ============================ -->
+        <section class="hero">
+            <div class="container hero__grid">
+                <div>
+                    <h1 class="hero__title">
+                        Simple apps that solve <span class="accent">everyday problems.</span>
+                    </h1>
+                    <p class="hero__lead">
+                        IMG DEV. builds focused software -- the kind you open, use, and close
+                        without thinking about it.
+                    </p>
+                    <div class="hero__actions">
+                        <a class="btn btn--primary" href="#apps">Browse apps</a>
+                        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+                    </div>
+                </div>
+
+                <div class="terminal" aria-hidden="true">
+                    <div class="terminal__bar">
+                        <div class="terminal__dots"><span></span><span></span><span></span></div>
+                        <span class="terminal__title">~/img-dev</span>
+                    </div>
+                    <div class="terminal__body">
+                        <p class="cmd">img-dev --about</p>
+                        <p class="out">Apps that make sense</p>
+                        <p class="out">Real world problems</p>
+                        <p class="out">Logical solutions</p>
+                        <p class="spacer"></p>
+                        <p class="cmd">img-dev apps --list</p>
+                        <p class="comment"># 0 published · 1 in development</p>
+                        <p class="spacer"></p>
+                        <p class="cmd">img-dev contact</p>
+                        <p class="out">contact@img-dev.io</p>
+                        <p class="spacer"></p>
+                        <p class="cmd"><span class="cursor"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ Apps ============================ -->
+        <section class="section" id="apps">
+            <div class="container">
+                <p class="section__label">// app library</p>
+                <h2 class="section__title">What we're building</h2>
+
+                <div class="app-grid">
+                    <article class="app-card">
+                        <div class="app-card__icon" aria-hidden="true">&lt;/&gt;</div>
+                        <span class="chip">In development</span>
+                        <h3 class="app-card__title">app_001</h3>
+                        <p class="app-card__desc">
+                            The first IMG DEV. release is in progress. Details, screenshots, and a
+                            download link will land here once it's ready for the world.
+                        </p>
+                        <a class="app-card__link" href="#contact">Tell me when it ships &rarr;</a>
+                    </article>
+                </div>
+
+                <p class="app-note">&gt; more coming soon</p>
+            </div>
+        </section>
+
+        <!-- =========================== Contact =========================== -->
+        <section class="section" id="contact">
+            <div class="container">
+                <p class="section__label">// contact</p>
+                <h2 class="section__title">Say hello</h2>
+                <p class="section__lead">
+                    Questions, feedback, bug reports, or an idea for something that should exist —
+                    all of it is welcome.
+                </p>
+
+                <div class="contact-grid">
+                    <div class="contact-aside">
+                        <p>
+                            Use the form and it lands straight in the inbox, or email directly if
+                            you'd rather. Expect a reply within a couple of business days.
+                        </p>
+                        <a class="contact-aside__email" href="mailto:contact@img-dev.io">contact@img-dev.io</a>
+                    </div>
+
+                    <form class="form" id="contact-form" action="https://formspree.io/f/xbgrvall" method="POST">
+                        <div class="field">
+                            <label for="name">name</label>
+                            <input type="text" id="name" name="name" placeholder="Ada Lovelace" required
+                                autocomplete="name" maxlength="100">
+                        </div>
+
+                        <div class="field">
+                            <label for="email">email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required
+                                autocomplete="email" maxlength="150">
+                        </div>
+
+                        <div class="field">
+                            <label for="message">message</label>
+                            <textarea id="message" name="message" placeholder="What's on your mind?" required
+                                maxlength="4000"></textarea>
+                        </div>
+
+                        <!-- Formspree: sets the subject line of the notification email. -->
+                        <input type="hidden" name="_subject" value="New message from img-dev.io">
+                        <!-- Formspree honeypot: bots fill it, humans never see it. -->
+                        <div class="hp" aria-hidden="true">
+                            <label for="_gotcha">Leave this field empty</label>
+                            <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <p class="form__status" id="form-status" role="status" aria-live="polite" hidden></p>
+
+                        <div class="form__footer">
+                            <button class="btn btn--primary" type="submit" id="form-submit">Send message</button>
+                            <p class="form__note">
+                                We only use what you send to reply. See the
+                                <a href="privacy.html">Privacy Policy</a>.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__grid">
+                <div>
+                    <a class="brand" href="index.html"><span class="brand__sigil">&gt;_</span> IMG&nbsp;DEV.</a>
+                    <p class="site-footer__tagline">
+                        Simple apps that solve everyday problems.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Site</h3>
+                    <ul>
+                        <li><a href="index.html#apps">Apps</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="mailto:contact@img-dev.io">contact@img-dev.io</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <span>&copy; <span id="year">2026</span> IMG DEV. LLC. All rights reserved.</span>
+                <span>Built in plain HTML &amp; CSS.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
